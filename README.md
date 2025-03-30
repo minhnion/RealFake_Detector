@@ -3,7 +3,9 @@ It utilizes Convolutional Neural Networks (CNNs), including LeNet and ResNet, to
 
 Dataset from Kaggle: https://www.kaggle.com/datasets/manjilkarki/deepfake-and-real-images
 
-Some of image train history:
+Some of images train history:
 ![image](https://github.com/user-attachments/assets/56f82b80-f4f0-4abd-b696-dafbc7787a3c)
+
+
 ![training_history](https://github.com/user-attachments/assets/3b4eeea6-3464-4c55-857c-b01bb378f1db)
 
