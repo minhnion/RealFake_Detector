@@ -1,1 +1,13 @@
 Dataset/
+venv/
+/venv/
+
+.env
+api/.env
+
+__pycache__/
+*.pyc
+
+.vscode/
+
+.DS_Store
