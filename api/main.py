@@ -5,6 +5,7 @@ import cloudinary
 import cloudinary.uploader
 from fastapi import FastAPI, File, UploadFile, HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.middleware.cors import CORSMiddleware
 from jose import JWTError, jwt
 from typing import List
 
@@ -23,6 +24,23 @@ app = FastAPI(
     title="Deepfake Image Detection Service",
     description="A service to detect deepfakes in images, with user accounts and history.",
     version="3.0-image-only"
+)
+
+origins = [
+    "http://localhost",  # Allow all subdomains of localhost
+    "http://localhost:3000",  # Specific port for your frontend (adjust if different)
+    "http://127.0.0.1",  # Allow local IP
+    "http://127.0.0.1:3000",  # Specific port for your frontend
+    # Add more origins if needed (e.g., production URL)
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # List of allowed origins
+    allow_credentials=True,  # Allow cookies/auth credentials
+    allow_methods=["*"],  # Allow all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
 # Cấu hình Cloudinary từ biến môi trường
